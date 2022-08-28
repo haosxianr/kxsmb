@@ -72,7 +72,7 @@ end
 
 # versions
 
-IOS_MIN_VERSION='8.0'
+TVOS_MIN_VERSION='11.0'
 SAMBA_VERSION='4.0.26'
 
 # samba source
@@ -82,8 +82,8 @@ SAMBA_BASE_URL="http://ftp.samba.org/pub/samba/stable/"
 #pathes
 
 XCODE_PATH=%x{ /usr/bin/xcode-select --print-path }.delete("\n")
-SIM_SDK_PATH=XCODE_PATH + "/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk"
-IOS_SDK_PATH=XCODE_PATH + "/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk"
+SIM_SDK_PATH=XCODE_PATH + "/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator.sdk"
+TVOS_SDK_PATH=XCODE_PATH + "/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk"
 
 #SAMBA_PATH="samba-#{SAMBA_VERSION}/source3"
 SAMBA_FOLDER="samba"
@@ -94,20 +94,20 @@ EXT_INCLUDE_PATH='tmp/include'
 
 CF_FLAGS='-pipe -Wno-trigraphs -fpascal-strings -Os -fembed-bitcode -g'
 
-IOS_CF_FLAGS='-ftree-vectorize'
-IOS_LD_FLAGS=''
+TVOS_CF_FLAGS='-ftree-vectorize'
+TVOS_LD_FLAGS=''
 
-ARM7_CF_FLAGS="-arch armv7 -mcpu=cortex-a8 -mfpu=neon #{IOS_CF_FLAGS} #{CF_FLAGS}"
-ARM7_LD_FLAGS="-arch armv7 #{IOS_LD_FLAGS}"
+# ARM7_CF_FLAGS="-arch armv7 -mcpu=cortex-a8 -mfpu=neon #{TVOS_CF_FLAGS} #{CF_FLAGS}"
+# ARM7_LD_FLAGS="-arch armv7 #{TVOS_LD_FLAGS}"
+#
+# ARM7s_CF_FLAGS="-arch armv7s -mcpu=cortex-a8 -mfpu=neon #{TVOS_CF_FLAGS} #{CF_FLAGS}"
+# ARM7s_LD_FLAGS="-arch armv7s #{TVOS_LD_FLAGS}"
 
-ARM7s_CF_FLAGS="-arch armv7s -mcpu=cortex-a8 -mfpu=neon #{IOS_CF_FLAGS} #{CF_FLAGS}"
-ARM7s_LD_FLAGS="-arch armv7s #{IOS_LD_FLAGS}"
+ARM64_CF_FLAGS="-arch arm64 -Wno-error=implicit-function-declaration #{TVOS_CF_FLAGS} #{CF_FLAGS}"
+ARM64_LD_FLAGS="-arch arm64 #{TVOS_LD_FLAGS}"
 
-ARM64_CF_FLAGS="-arch arm64 -Wno-error=implicit-function-declaration #{IOS_CF_FLAGS} #{CF_FLAGS}"
-ARM64_LD_FLAGS="-arch arm64 #{IOS_LD_FLAGS}"
-
-I386_CF_FLAGS="-arch i386 #{CF_FLAGS}"
-I386_LD_FLAGS='-arch i386'
+# I386_CF_FLAGS="-arch i386 #{CF_FLAGS}"
+# I386_LD_FLAGS='-arch i386'
 
 X86_64_CF_FLAGS="-arch x86_64 -Wno-error=implicit-function-declaration #{CF_FLAGS}"
 X86_64_LD_FLAGS='-arch x86_64'
@@ -134,7 +134,7 @@ SIM_SMB_ARGS = [
 'samba_cv_HAVE_FCNTL_LOCK=yes'
 ]
 
-IOS_SMB_ARGS = [
+TVOS_SMB_ARGS = [
 'ac_cv_header_libunwind_h=no',
 'ac_cv_header_execinfo_h=no',
 'ac_cv_header_rpcsvc_ypclnt_h=no',
@@ -146,21 +146,21 @@ IOS_SMB_ARGS = [
 'samba_cv_little_endian=yes',
 ]
 
-ARM7_SMB_ARGS = [
-'--host=arm-apple-darwin',
-]
-
-ARM7s_SMB_ARGS = [
-'--host=arm-apple-darwin',
-]
+# ARM7_SMB_ARGS = [
+# '--host=arm-apple-darwin',
+# ]
+#
+# ARM7s_SMB_ARGS = [
+# '--host=arm-apple-darwin',
+# ]
 
 ARM64_SMB_ARGS = [
 '--host=arm-apple-darwin',
 ]
 
-I386_SMB_ARGS = [
-'--host=i686-apple-darwin',
-]
+# I386_SMB_ARGS = [
+# '--host=i686-apple-darwin',
+# ]
 
 X86_64_SMB_ARGS = [
 '--host=x86_64-apple-darwin',
@@ -187,23 +187,23 @@ def mkArgs(sdkPath, platformArgs, procArgs, cfFlags, ldFlags)
 	ENV['CC']="xcrun clang"
 	ENV['CPP']="xcrun clang -E"
 	ENV['LD']="xcrun ld"
-	ENV['CFLAGS']="-std=gnu99 -no-cpp-precomp -miphoneos-version-min=#{IOS_MIN_VERSION} -isysroot #{sdkPath} -I#{sdkPath}/usr/include #{cfFlags}"
-	ENV['CPPFLAGS']="-std=gnu99 -no-cpp-precomp -miphoneos-version-min=#{IOS_MIN_VERSION} -isysroot #{sdkPath} -I#{sdkPath}/usr/include #{cfFlags} -I#{extInclude}"
-	ENV['LDFLAGS']="-miphoneos-version-min=#{IOS_MIN_VERSION} -isysroot #{sdkPath} -L#{sdkPath}/usr/lib #{ldFlags}"
+	ENV['CFLAGS']="-std=gnu99 -no-cpp-precomp -mtvos-version-min=#{TVOS_MIN_VERSION} -isysroot #{sdkPath} -I#{sdkPath}/usr/include #{cfFlags}"
+	ENV['CPPFLAGS']="-std=gnu99 -no-cpp-precomp -mtvos-version-min=#{TVOS_MIN_VERSION} -isysroot #{sdkPath} -I#{sdkPath}/usr/include #{cfFlags} -I#{extInclude}"
+	ENV['LDFLAGS']="-mtvos-version-min=#{TVOS_MIN_VERSION} -isysroot #{sdkPath} -L#{sdkPath}/usr/lib #{ldFlags}"
 	args.join(' ')
 end
 
 def buildArch(arch)
 
 	case arch
-	when 'i386'
-		args = mkArgs(SIM_SDK_PATH, SIM_SMB_ARGS, I386_SMB_ARGS, I386_CF_FLAGS, I386_LD_FLAGS)
-	when 'armv7'
-		args = mkArgs(IOS_SDK_PATH, IOS_SMB_ARGS, ARM7_SMB_ARGS, ARM7_CF_FLAGS, ARM7_LD_FLAGS)
-	when 'armv7s'	
-		args = mkArgs(IOS_SDK_PATH, IOS_SMB_ARGS, ARM7s_SMB_ARGS, ARM7s_CF_FLAGS, ARM7s_LD_FLAGS)
+  # when 'i386'
+  #   args = mkArgs(SIM_SDK_PATH, SIM_SMB_ARGS, I386_SMB_ARGS, I386_CF_FLAGS, I386_LD_FLAGS)
+  # when 'armv7'
+  #   args = mkArgs(TVOS_SDK_PATH, TVOS_SMB_ARGS, ARM7_SMB_ARGS, ARM7_CF_FLAGS, ARM7_LD_FLAGS)
+  # when 'armv7s'
+  #   args = mkArgs(TVOS_SDK_PATH, TVOS_SMB_ARGS, ARM7s_SMB_ARGS, ARM7s_CF_FLAGS, ARM7s_LD_FLAGS)
 	when 'arm64'	
-		args = mkArgs(IOS_SDK_PATH, IOS_SMB_ARGS, ARM64_SMB_ARGS, ARM64_CF_FLAGS, ARM64_LD_FLAGS)
+		args = mkArgs(TVOS_SDK_PATH, TVOS_SMB_ARGS, ARM64_SMB_ARGS, ARM64_CF_FLAGS, ARM64_LD_FLAGS)
 	when 'x86_64'
 		args = mkArgs(SIM_SDK_PATH, SIM_SMB_ARGS, X86_64_SMB_ARGS, X86_64_CF_FLAGS, X86_64_LD_FLAGS)
 	else
@@ -237,17 +237,17 @@ end
 
 # tasks
 
-desc "Build smb armv7 libs"
-task :build_smb_armv7 do
-	checkExtInclude	
-	buildArch('armv7')	
-end
-
-desc "Build smb armv7s libs"
-task :build_smb_armv7s do
-	checkExtInclude	
-	buildArch('armv7s')	
-end
+# desc "Build smb armv7 libs"
+# task :build_smb_armv7 do
+#   checkExtInclude
+#   buildArch('armv7')
+# end
+#
+# desc "Build smb armv7s libs"
+# task :build_smb_armv7s do
+#   checkExtInclude
+#   buildArch('armv7s')
+# end
 
 desc "Build smb arm64 libs"
 task :build_smb_arm64 do
@@ -255,10 +255,10 @@ task :build_smb_arm64 do
 	buildArch('arm64')	
 end
 
-desc "Build smb i386 libs"
-task :build_smb_i386 do	
-	buildArch('i386')	
-end
+# desc "Build smb i386 libs"
+# task :build_smb_i386 do
+#   buildArch('i386')
+# end
 
 desc "Build smb x86_64 libs"
 task :build_smb_x86_64 do	
@@ -272,7 +272,7 @@ task :build_smb_universal_full do
 	dest.mkdir unless dest.exist?
 
 	SMB_LIBS.each do |x|
-		args = "-create -arch armv7 #{SAMBA_SOURCE_PATH}/bin/armv7/#{x}.a -arch armv7s #{SAMBA_SOURCE_PATH}/bin/armv7s/#{x}.a -arch arm64 #{SAMBA_SOURCE_PATH}/bin/arm64/#{x}.a -arch i386 #{SAMBA_SOURCE_PATH}/bin/i386/#{x}.a -arch x86_64 #{SAMBA_SOURCE_PATH}/bin/x86_64/#{x}.a -output #{dest}/#{x}.a"
+		args = "-create -arch arm64 #{SAMBA_SOURCE_PATH}/bin/arm64/#{x}.a -arch x86_64 #{SAMBA_SOURCE_PATH}/bin/x86_64/#{x}.a -output #{dest}/#{x}.a"
 		system_or_exit "xcrun lipo #{args}"
 	end	
 end
@@ -284,7 +284,7 @@ task :build_smb_universal do
 	dest.mkdir unless dest.exist?
 
 	SMB_LIBS.each do |x|
-		args = "-create -arch armv7 #{SAMBA_SOURCE_PATH}/bin/armv7/#{x}.a -arch arm64 #{SAMBA_SOURCE_PATH}/bin/arm64/#{x}.a -arch i386 #{SAMBA_SOURCE_PATH}/bin/i386/#{x}.a -arch x86_64 #{SAMBA_SOURCE_PATH}/bin/x86_64/#{x}.a -output #{dest}/#{x}.a"
+		args = "-create -arch arm64 #{SAMBA_SOURCE_PATH}/bin/arm64/#{x}.a -arch x86_64 #{SAMBA_SOURCE_PATH}/bin/x86_64/#{x}.a -output #{dest}/#{x}.a"
 		system_or_exit "xcrun lipo #{args}"
 	end	
 end
@@ -313,10 +313,10 @@ end
 
 desc "Clean"
 task :clean do
-	cleanDir("#{SAMBA_SOURCE_PATH}/bin/armv7")
-	cleanDir("#{SAMBA_SOURCE_PATH}/bin/armv7s")
+  # cleanDir("#{SAMBA_SOURCE_PATH}/bin/armv7")
+  # cleanDir("#{SAMBA_SOURCE_PATH}/bin/armv7s")
 	cleanDir("#{SAMBA_SOURCE_PATH}/bin/arm64")
-	cleanDir("#{SAMBA_SOURCE_PATH}/bin/i386")
+  # cleanDir("#{SAMBA_SOURCE_PATH}/bin/i386")
 	cleanDir("#{SAMBA_SOURCE_PATH}/bin/x86_64")	
 	cleanDir("#{SAMBA_SOURCE_PATH}/bin/universal")	
 
@@ -345,6 +345,6 @@ task :retrieve_samba do
 
 end
 
-task :build_full => [:retrieve_samba, :build_smb_armv7, :build_smb_armv7s, :build_smb_arm64, :build_smb_i386, :build_smb_x86_64, :build_smb_universal_full, :copy_libs, :copy_headers] 
-task :build_all => [:retrieve_samba, :build_smb_armv7, :build_smb_arm64, :build_smb_i386, :build_smb_x86_64, :build_smb_universal, :copy_libs, :copy_headers] 
+task :build_full => [:retrieve_samba, :build_smb_arm64, :build_smb_x86_64, :build_smb_universal_full, :copy_libs, :copy_headers] 
+task :build_all => [:retrieve_samba,  :build_smb_arm64, :build_smb_x86_64, :build_smb_universal, :copy_libs, :copy_headers] 
 task :default => [:build_all]

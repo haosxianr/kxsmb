@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8183C94028BA4B0700A3819C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8183C93F28BA4B0700A3819C /* AppDelegate.m */; };
+		8183C94328BA4B0700A3819C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8183C94228BA4B0700A3819C /* ViewController.m */; };
+		8183C94628BA4B0700A3819C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8183C94428BA4B0700A3819C /* Main.storyboard */; };
+		8183C94828BA4B0800A3819C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8183C94728BA4B0800A3819C /* Assets.xcassets */; };
+		8183C94B28BA4B0800A3819C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8183C94928BA4B0800A3819C /* LaunchScreen.storyboard */; };
+		8183C94D28BA4B0800A3819C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8183C94C28BA4B0800A3819C /* main.m */; };
+		8183C96128BA51BD00A3819C /* TreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8183C95C28BA51BD00A3819C /* TreeViewController.m */; };
+		8183C96228BA51BD00A3819C /* FileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8183C95F28BA51BD00A3819C /* FileViewController.m */; };
+		8183C96328BA51BD00A3819C /* SmbAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8183C96028BA51BD00A3819C /* SmbAuthViewController.m */; };
+		8183C96528BA546100A3819C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8183C96428BA546100A3819C /* CoreGraphics.framework */; };
+		8183C96728BA546D00A3819C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8183C96628BA546D00A3819C /* Foundation.framework */; };
+		8183C96928BA548D00A3819C /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8183C96828BA547F00A3819C /* libiconv.tbd */; };
+		8183C96B28BA54AC00A3819C /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8183C96A28BA54A500A3819C /* libresolv.tbd */; };
+		8183C96D28BA54C900A3819C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8183C96C28BA54C200A3819C /* libz.tbd */; };
+		8183C96E28BA54E100A3819C /* libsmbclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87085FBF1705D4CA009CD258 /* libsmbclient.a */; };
+		8183C96F28BA54E100A3819C /* libtalloc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87085FC11705D4CA009CD258 /* libtalloc.a */; };
+		8183C97028BA54E100A3819C /* libtdb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87085FC21705D4CA009CD258 /* libtdb.a */; };
+		8183C97128BA54E100A3819C /* libtevent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC6EFED179A4133005AC807 /* libtevent.a */; };
+		8183C97228BA54E100A3819C /* libwbclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87085FC31705D4CA009CD258 /* libwbclient.a */; };
+		8183C97428BA550200A3819C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8183C97328BA550200A3819C /* UIKit.framework */; };
+		8183C97828BA574200A3819C /* libKxSMB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 871CC5741774589C00EDD76D /* libKxSMB.a */; };
 		87085F8D1705D46C009CD258 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87085F8C1705D46C009CD258 /* UIKit.framework */; };
 		87085F8F1705D46C009CD258 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87085F8E1705D46C009CD258 /* Foundation.framework */; };
 		87085F911705D46C009CD258 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87085F901705D46C009CD258 /* CoreGraphics.framework */; };
@@ -33,6 +54,16 @@
 		F992AF0C1BC3D3CC0063A4B3 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F992AF0B1BC3D3CC0063A4B3 /* QuickLook.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8183C97928BA574200A3819C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87085F811705D46B009CD258 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 871CC5731774589C00EDD76D;
+			remoteInfo = KxSMB;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		871CC5721774589C00EDD76D /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -46,6 +77,27 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8183C93C28BA4B0600A3819C /* KxSMBTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KxSMBTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8183C93E28BA4B0700A3819C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8183C93F28BA4B0700A3819C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8183C94128BA4B0700A3819C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8183C94228BA4B0700A3819C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8183C94528BA4B0700A3819C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8183C94728BA4B0800A3819C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8183C94A28BA4B0800A3819C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8183C94C28BA4B0800A3819C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8183C95B28BA51BD00A3819C /* TreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeViewController.h; sourceTree = "<group>"; };
+		8183C95C28BA51BD00A3819C /* TreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeViewController.m; sourceTree = "<group>"; };
+		8183C95D28BA51BD00A3819C /* FileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileViewController.h; sourceTree = "<group>"; };
+		8183C95E28BA51BD00A3819C /* SmbAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmbAuthViewController.h; sourceTree = "<group>"; };
+		8183C95F28BA51BD00A3819C /* FileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileViewController.m; sourceTree = "<group>"; };
+		8183C96028BA51BD00A3819C /* SmbAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmbAuthViewController.m; sourceTree = "<group>"; };
+		8183C96428BA546100A3819C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS15.4.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		8183C96628BA546D00A3819C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS15.4.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		8183C96828BA547F00A3819C /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS15.4.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
+		8183C96A28BA54A500A3819C /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS15.4.sdk/usr/lib/libresolv.tbd; sourceTree = DEVELOPER_DIR; };
+		8183C96C28BA54C200A3819C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS15.4.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
+		8183C97328BA550200A3819C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS15.4.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		87085F891705D46C009CD258 /* KxSMBSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KxSMBSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87085F8C1705D46C009CD258 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		87085F8E1705D46C009CD258 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -61,7 +113,7 @@
 		87085FA21705D46C009CD258 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		87085FB21705D494009CD258 /* KxSMBProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxSMBProvider.h; sourceTree = "<group>"; };
 		87085FB31705D494009CD258 /* KxSMBProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxSMBProvider.m; sourceTree = "<group>"; };
-		87085FB51705D4AB009CD258 /* FileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = FileViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		87085FB51705D4AB009CD258 /* FileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = FileViewController.h; sourceTree = "<group>"; };
 		87085FB61705D4AB009CD258 /* FileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileViewController.m; sourceTree = "<group>"; };
 		87085FB71705D4AB009CD258 /* SmbAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmbAuthViewController.h; sourceTree = "<group>"; };
 		87085FB81705D4AB009CD258 /* SmbAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmbAuthViewController.m; sourceTree = "<group>"; };
@@ -84,6 +136,25 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8183C93928BA4B0600A3819C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8183C97028BA54E100A3819C /* libtdb.a in Frameworks */,
+				8183C97428BA550200A3819C /* UIKit.framework in Frameworks */,
+				8183C97228BA54E100A3819C /* libwbclient.a in Frameworks */,
+				8183C96928BA548D00A3819C /* libiconv.tbd in Frameworks */,
+				8183C96528BA546100A3819C /* CoreGraphics.framework in Frameworks */,
+				8183C96728BA546D00A3819C /* Foundation.framework in Frameworks */,
+				8183C97128BA54E100A3819C /* libtevent.a in Frameworks */,
+				8183C96F28BA54E100A3819C /* libtalloc.a in Frameworks */,
+				8183C96E28BA54E100A3819C /* libsmbclient.a in Frameworks */,
+				8183C97828BA574200A3819C /* libKxSMB.a in Frameworks */,
+				8183C96B28BA54AC00A3819C /* libresolv.tbd in Frameworks */,
+				8183C96D28BA54C900A3819C /* libz.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		87085F861705D46C009CD258 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -114,6 +185,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8183C93D28BA4B0700A3819C /* KxSMBTV */ = {
+			isa = PBXGroup;
+			children = (
+				8183C95D28BA51BD00A3819C /* FileViewController.h */,
+				8183C95F28BA51BD00A3819C /* FileViewController.m */,
+				8183C95E28BA51BD00A3819C /* SmbAuthViewController.h */,
+				8183C96028BA51BD00A3819C /* SmbAuthViewController.m */,
+				8183C95B28BA51BD00A3819C /* TreeViewController.h */,
+				8183C95C28BA51BD00A3819C /* TreeViewController.m */,
+				8183C93E28BA4B0700A3819C /* AppDelegate.h */,
+				8183C93F28BA4B0700A3819C /* AppDelegate.m */,
+				8183C95128BA516600A3819C /* Supporting Files */,
+			);
+			path = KxSMBTV;
+			sourceTree = "<group>";
+		};
+		8183C95128BA516600A3819C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8183C94128BA4B0700A3819C /* ViewController.h */,
+				8183C94228BA4B0700A3819C /* ViewController.m */,
+				8183C94428BA4B0700A3819C /* Main.storyboard */,
+				8183C94728BA4B0800A3819C /* Assets.xcassets */,
+				8183C94928BA4B0800A3819C /* LaunchScreen.storyboard */,
+				8183C94C28BA4B0800A3819C /* main.m */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		87085F801705D46B009CD258 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +222,7 @@
 				87085FBE1705D4BE009CD258 /* libs */,
 				87085F921705D46C009CD258 /* KxSMBSample */,
 				871CC5761774589C00EDD76D /* KxSMB */,
+				8183C93D28BA4B0700A3819C /* KxSMBTV */,
 				87085F8B1705D46C009CD258 /* Frameworks */,
 				87085F8A1705D46C009CD258 /* Products */,
 			);
@@ -132,6 +233,7 @@
 			children = (
 				87085F891705D46C009CD258 /* KxSMBSample.app */,
 				871CC5741774589C00EDD76D /* libKxSMB.a */,
+				8183C93C28BA4B0600A3819C /* KxSMBTV.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +241,12 @@
 		87085F8B1705D46C009CD258 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8183C97328BA550200A3819C /* UIKit.framework */,
+				8183C96C28BA54C200A3819C /* libz.tbd */,
+				8183C96A28BA54A500A3819C /* libresolv.tbd */,
+				8183C96828BA547F00A3819C /* libiconv.tbd */,
+				8183C96628BA546D00A3819C /* Foundation.framework */,
+				8183C96428BA546100A3819C /* CoreGraphics.framework */,
 				F992AF0B1BC3D3CC0063A4B3 /* QuickLook.framework */,
 				87085FCC1705D509009CD258 /* libresolv.dylib */,
 				87085FCA1705D503009CD258 /* libiconv.dylib */,
@@ -214,6 +322,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8183C93B28BA4B0600A3819C /* KxSMBTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8183C95028BA4B0800A3819C /* Build configuration list for PBXNativeTarget "KxSMBTV" */;
+			buildPhases = (
+				8183C93828BA4B0600A3819C /* Sources */,
+				8183C93928BA4B0600A3819C /* Frameworks */,
+				8183C93A28BA4B0600A3819C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8183C97A28BA574200A3819C /* PBXTargetDependency */,
+			);
+			name = KxSMBTV;
+			productName = KxSMBTV;
+			productReference = 8183C93C28BA4B0600A3819C /* KxSMBTV.app */;
+			productType = "com.apple.product-type.application";
+		};
 		87085F881705D46C009CD258 /* KxSMBSample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87085FAF1705D46C009CD258 /* Build configuration list for PBXNativeTarget "KxSMBSample" */;
@@ -256,13 +382,22 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Konstantin Bukreev";
+				TargetAttributes = {
+					8183C93B28BA4B0600A3819C = {
+						CreatedOnToolsVersion = 13.4.1;
+						DevelopmentTeam = 27BQWHCCWP;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = 87085F841705D46B009CD258 /* Build configuration list for PBXProject "KxSMBSample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
+				Base,
 			);
 			mainGroup = 87085F801705D46B009CD258;
 			productRefGroup = 87085F8A1705D46C009CD258 /* Products */;
@@ -271,11 +406,22 @@
 			targets = (
 				87085F881705D46C009CD258 /* KxSMBSample */,
 				871CC5731774589C00EDD76D /* KxSMB */,
+				8183C93B28BA4B0600A3819C /* KxSMBTV */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8183C93A28BA4B0600A3819C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8183C94B28BA4B0800A3819C /* LaunchScreen.storyboard in Resources */,
+				8183C94828BA4B0800A3819C /* Assets.xcassets in Resources */,
+				8183C94628BA4B0700A3819C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		87085F871705D46C009CD258 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,6 +436,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8183C93828BA4B0600A3819C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8183C94328BA4B0700A3819C /* ViewController.m in Sources */,
+				8183C94D28BA4B0800A3819C /* main.m in Sources */,
+				8183C96228BA51BD00A3819C /* FileViewController.m in Sources */,
+				8183C96328BA51BD00A3819C /* SmbAuthViewController.m in Sources */,
+				8183C96128BA51BD00A3819C /* TreeViewController.m in Sources */,
+				8183C94028BA4B0700A3819C /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		87085F851705D46C009CD258 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -313,7 +472,31 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8183C97A28BA574200A3819C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 871CC5731774589C00EDD76D /* KxSMB */;
+			targetProxy = 8183C97928BA574200A3819C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		8183C94428BA4B0700A3819C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8183C94528BA4B0700A3819C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8183C94928BA4B0800A3819C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8183C94A28BA4B0800A3819C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		87085F951705D46C009CD258 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -325,6 +508,131 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8183C94E28BA4B0800A3819C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 27BQWHCCWP;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "KxSMBSample/KxSMBSample-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.1101.KxSMBTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 15.4;
+			};
+			name = Debug;
+		};
+		8183C94F28BA4B0800A3819C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 27BQWHCCWP;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "KxSMBSample/KxSMBSample-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.1101.KxSMBTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 15.4;
+			};
+			name = Release;
+		};
 		87085FAD1705D46C009CD258 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -430,6 +738,7 @@
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/libs\"";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/libs\"";
 			};
@@ -444,6 +753,7 @@
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/libs\"";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/libs\"";
 			};
@@ -452,6 +762,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8183C95028BA4B0800A3819C /* Build configuration list for PBXNativeTarget "KxSMBTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8183C94E28BA4B0800A3819C /* Debug */,
+				8183C94F28BA4B0800A3819C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		87085F841705D46B009CD258 /* Build configuration list for PBXProject "KxSMBSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
